@@ -1,0 +1,5 @@
+[
+  {"number1": 3, "number2": 6, "expect": 9},
+  {"number1": 6, "number2": 6, "expect": 12},
+  {"number1": 9, "number2": 9, "expect": 18}
+]

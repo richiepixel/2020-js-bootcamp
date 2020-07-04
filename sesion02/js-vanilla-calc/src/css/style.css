@@ -1,9 +1,11 @@
-*{
+*,
+*::after,
+*::before{
   padding: 0;
   margin: 0;
 }
 html{
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 body{
@@ -13,10 +15,40 @@ body{
 .container{ 
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+h1{
+  margin: 1.5rem;
+  font-size: xx-large;
 }
 main{
   font-size: 1.5rem;
+  max-width: 15rem;
 }
-main section:nth-child(3){
+/* buttons line container*/
+main section:nth-child(-n+2) input{
+  font-size: large;
+  border-radius: .3rem;
+  padding: .5em;
+  width: 100%;
+}
+/* buttons and result box container */
+main section:nth-child(n+3){
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+main section:nth-child(3) button{
+  width: 21%;
+  height: 2rem;
+  border-radius: .6rem;
+  box-shadow: .3rem .6rem dimgray;
+}
+main section:nth-child(4){
+  flex-direction: column;
+}
+main section:nth-child(4) span{
+  font-size: 3rem;
+  font-weight: 600;
 }

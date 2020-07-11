@@ -1,5 +1,6 @@
-const calc = require('./calc')
 
-const res = calc.suma(7, 3)
+import { suma } from './calc'
+
+const res = suma(3, 6)
 
 console.log(res)

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="https://via.placeholder.com/60/000000/FFFFFF/?text=CertificaTIC.com" alt="CertificaTIC.org logo">
+      </a>
+      <div class="navbar-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          <small>Your awesome dashboard</small>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">
+            Richie Cedillo
+          </div>
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              <span class="icon"><i class="fas fa-user"></i></span>
+              Profile
+            </a>
+            <a class="navbar-item">
+              <span class="icon"><i class="fas fa-bug"></i></span>
+              Report a bug
+            </a>
+            <a class="navbar-item">
+              <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+              Sign out
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+    <!-- main layout -->
+    <div class="columns">
+      <!-- left side (menu) -->
+      <div class="column is-4-tablet is-3-desktop is-2-widescreen">
+        <aside class="menu">
+          <p class="menu-label">Menu</p>
+          <ul class="men-list">
+            <li>
+              <a href="dashboard.html">
+                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="books.html">
+                <span class="icon"><i class="fas fa-book"></i></span>
+                Books
+              </a>
+            </li>
+            <li>
+              <a href="customers.html">
+                <span class="icon"><i class="fas fa-address-book"></i></span>
+                Customers
+              </a>
+            </li>
+            <li>
+              <a href="orders.html">
+                <span class="icon"><i class="fas fa-file-alt"></i></span>
+                Orders
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- right side (dashboard) -->
+      <div class="column ">
+        <div class="level">
+          <div class="level-left">
+            <h2 class="subtitle">
+              <span class="has-text-grey-light">Hello,</span>
+              <strong>Richie Cedillo</strong>
+            </h2>
+          </div>
+          <div class="level-right">
+            <div class="select">
+              <select>
+                <option>Today</option>
+                <option>Yesterday</option>
+                <option selected>This week</option>
+                <option>This month</option>
+                <option>This year</option>
+                <option>All the time</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Summary -->
+        <div class="columns is-multiline">
+          <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+            <div class="notification is-link has-text">
+              <p class="title">321</p>
+              <p class="subtitle">Orders</p>
+            </div>
+          </div>
+          <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+            <div class="notification is-info is-link has-text">
+              <p class="title">$65,224</p>
+              <p class="subtitle">Revenue</p>
+            </div>
+          </div>
+          <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+            <div class="notification is-primary has-text">
+              <p class="title">8,537</p>
+              <p class="subtitle">Visitors</p>
+            </div>
+          </div>
+          <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+            <div class="notification is-success has-text">
+              <p class="title">369,999</p>
+              <p class="subtitle">Pageview</p>
+            </div>
+          </div>
+          <!-- most loyal -->
+          <div class="column is-12-tablet is-6-desktop is-4-widescreen">
+            <div class="card">
+              <div class="card-content">
+                <h2 class="title is-4">Most Loyal customers</h2>
+                <div class="media">
+                  <div class="media-left is-marginless">
+                    <p class="number">1</p>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5 is-spaced is-marginless">
+                      <a href="#">Emma Stone</a>
+                    </p>
+                    <p class="subtitle is-6">USA</p>
+                  </div>
+
+                  <div class="media-right">10 orders</div>
+                </div>
+                <div class="media">
+                  <div class="media-left is-marginless">
+                    <p class="number">1</p>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5 is-spaced is-marginless">
+                      <a href="#">Joyce Vázquez</a>
+                    </p>
+                    <p class="subtitle is-6">Francia</p>
+                  </div>
+
+                  <div class="media-right">6 orders</div>
+                </div>
+                <div class="media">
+                  <div class="media-left is-marginless">
+                    <p class="number">1</p>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5 is-spaced is-marginless">
+                      <a href="#">Ana de Armas</a>
+                    </p>
+                    <p class="subtitle is-6">España</p>
+                  </div>
+
+                  <div class="media-right">7 orders</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- last orders -->
+          <div class="column is-12-tablet is-6-desktop is-4-widescreen">
+            <div class="card">
+              <div class="card-content">
+                <h2 class="title is-4">Last orders</h2>
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-5 is-spaced is-marginless"><a href="#">765214</a></p>
+                    <p class="subtitle is-6">Nov 18, 17:38 by
+                      <a href="#">Richie Cedillo</a>
+                    </p>
+                  </div>
+                  <div class="media-right is-marginless has-text-right">
+                    <p class="subtitle is-marginless has-text-right"><strong>$56.98</strong></p>
+                    <span class="tag is-warning">In progress</span>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-5 is-spaced is-marginless"><a href="#">289050</a></p>
+                      <p class="subtitle is-6">Nov 20, 11:45 by
+                        <a href="#">Joyce Vázquez</a>
+                      </p>
+                    </div>
+                    <div class="media-right is-marginless has-text-right">
+                      <p class="subtitle is-marginless"><strong>$56.98</strong></p>
+                      <span class="tag is-success">Succesfull</span>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5 is-spaced is-marginless"><a href="#">289050</a></p>
+                        <p class="subtitle is-6">Nov 12, 21:57 by
+                          <a href="#">Peter Parker</a>
+                        </p>
+                      </div>
+                      <div class="media-right is-marginless has-text-right">
+                        <p class="subtitle is-marginless"><strong>$56.98</strong></p>
+                        <span class="tag is-danger">Failled</span>
+                        </div>
+                      </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

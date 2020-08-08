@@ -23,6 +23,7 @@ nav ul{
 }
 nav ul li{
     padding: .3rem .9rem;
+    text-align: center;
 }
 nav ul li a{
     display: inline-block;

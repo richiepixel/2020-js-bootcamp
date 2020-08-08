@@ -1,2 +1,12 @@
 @charset "utf-8";
-@import "~bootstrap" /* Como es un archvo scss por defecto importa los archivos del mismo tipo no es necesario especificar la ruta ~bootstrap/scss/bootstrap.scss*/
+@import "~bootstrap"; /* Como es un archvo scss por defecto importa los archivos del mismo tipo no es necesario especificar la ruta ~bootstrap/scss/bootstrap.scss*/
+
+.container .row:nth-child(1){
+    min-height: 5rem;
+}
+
+.container .row:nth-child(4) .card{
+    min-height: 28rem;
+
+}
+

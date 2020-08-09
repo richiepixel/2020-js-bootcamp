@@ -36,6 +36,8 @@ nav ul li a{
     text-decoration: none;
     margin-left: .6rem;
     margin-right: .6rem;
+    margin-top: .6rem;
+    margin-bottom: .6rem;
 }
 nav ul li a:hover{
     background-color: rgb(9, 89, 164);

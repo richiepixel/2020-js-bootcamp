@@ -10,7 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 
-  <title>Conditional rendering</title>
+  <title>Conditional Rendering</title>
+  <style>
+    #root div {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin: 3rem;
+    }
+
+    #root section {
+      margin: 3rem;
+    }
+  </style>
 
 </head>
 
@@ -52,28 +64,42 @@
       )
     }
 
+    const LoginLogoutButton = (props) => {
+      // return <button onClick={props.handleLogin}>Login | Logout</button>
+      return <button onClick={props.handleLogin}>{props.buttonLabel}</button>
+    }
+
     class HandleState extends React.Component {
       state = {
-        isLoading: false
+        isLoading: false,
+        isLoggedIn: false
       }
       handleClick() {
-        this.setState ({
+        console.log('listening')
+        this.setState({
           isLoading: !this.state.isLoading
-        }
-
-        )
+        })
+      }
+      handleComponentLogin() {
+        console.log('*** handleComponentLogin ***')
+        this.setState({
+          isLoggedIn: !this.state.isLoggedIn
+        })
       }
       render() {
-        let result
-        if (!this.state.isLoading) {
-          result = <TableComponent />
-        } else {
-          result = <LoadingComponent />
-        }
+        let result = (!this.state.isLoading) ? <TableComponent /> : <LoadingComponent />
         return (
           <div>
-            <p>{result}</p>
-          <button onClick={(e) => this.handleClick(e)}>Change state</button>
+            <section>
+              <button onClick={(e) => this.handleClick(e)}>Change state</button>
+              <p>{result}</p>
+            </section>
+            <section>
+              <LoginLogoutButton
+                handleLogin={(e) => this.handleComponentLogin(e)}
+                buttonLabel={this.state.isLoggedIn ? 'Login' : 'Logout'}
+              />
+            </section>
           </div>
         )
 

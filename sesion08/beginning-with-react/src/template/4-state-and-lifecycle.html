@@ -42,13 +42,13 @@
       state = {
         date: new Date
       }
-      _tick(){
+      _tick() {
         this.setState({
           date: new Date()
         })
       }
       componentDidMount() {
-        this.setTimerID= setInterval(
+        this.setTimerID = setInterval(
           () => this._tick(),
           1000
         )

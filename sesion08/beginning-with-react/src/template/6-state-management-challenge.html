@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <title>State Management Challenge</title>
+
+</head>
+
+<body>
+  <a onclick="window.history.back()">Go Back</a>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class ClassStateManagement extends React.Component {
+
+      state = {
+        contador: 1
+      }
+      
+
+      incrementarClick(num){
+       this.setState ({
+         contador: this.state.contador + num
+       }) 
+       
+        console.log(`Incrementar = ${this.state.contador}` )
+      }
+
+      decrementarClick(num){
+        this.setState ({
+         contador: this.state.contador - num
+       }) 
+        console.log(`Incrementar = ${this.state.contador}` )
+      }
+
+      render() {
+        return (
+          <div>
+            <h3>State Management Challenge</h3>
+            <div>
+              
+              <button onClick={(e) => this.incrementarClick(1,e)}>Incrementar</button>
+              <button onClick={(e) => this.decrementarClick(1,e)}>Decrementar</button>
+              <button onClick={(e) => this.incrementarClick(2,e)}>Incrementar*2</button>
+              <button onClick={(e) => this.decrementarClick(2,e)}>Decrementar*2</button>
+
+              <p>Contador: {this.state.contador}</p>
+              
+            </div>
+          </div>
+
+        )
+      }
+
+      
+
+    }
+    ReactDOM.render(
+      <ClassStateManagement />,
+      document.querySelector('#root')
+    )
+  </script>
+</body>
+
+</html>

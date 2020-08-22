@@ -1,45 +1,45 @@
+/* https://color.adobe.com/es/explore */
 *{
     --primary: #07038C;
     --background-color: #0439D9;
 }
 body{
-    background-color: #003B74;
+    background-color: var(--primary);
     color: whitesmoke;
     font-family: 'Baloo Tamma 2', cursive;
 }
 
 nav{
-    max-width: 21rem;
-    background-color: #6000BF;
-    font-size: large;
-    margin-left: 3rem;
+  max-width: 60rem;
+  background-color: #8000FF;
+  font-size: large;
+  margin-left: 3rem;
 }
 nav ul{
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  max-height: 30rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 nav ul li{
-    padding: .3rem .9rem;
-    text-align: center;
+  padding: .6rem .9rem;
 }
 nav ul li a{
-    display: inline-block;
-    min-width: 15rem;
-    background-color: azure;
-    color: grey;
-    border: .3rem solid rgb(9, 89, 164);
-    border-radius: .3rem;
-    padding: .3rem .6rem; 
-    text-decoration: none;
-    margin-left: .6rem;
-    margin-right: .6rem;
-    margin-top: .6rem;
-    margin-bottom: .6rem;
+  display: inline-block;
+  min-width: 15rem;
+  background-color: azure;
+  color: grey;
+  border: .3rem solid rgb(9, 89, 164);
+  border-radius: .3rem;
+  padding: .3rem .6rem;
+  text-decoration: none;
+  margin-left: .6rem;
 }
 nav ul li a:hover{
-    background-color: rgb(9, 89, 164);
-    color: white;
+  background-color: rgb(9, 89, 164);
+  color: white;
 }

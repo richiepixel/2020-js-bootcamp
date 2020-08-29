@@ -5,8 +5,8 @@ const PostList = ({ data }) => {
   return (
     <table>
       <thead>
-        <th>user_id</th>
-        <th>id </th>
+        <th>id</th>
+        <th>user_id </th>
         <th>title</th>
         <th>body</th>
       </thead>

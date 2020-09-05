@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import authFunction from '../auth'
 import { useHistory, useLocation } from 'react-router-dom'
 
 const Login = () => {
 
-
+  const {state, setState} = useState()
   const history = useHistory()
   const location = useLocation()
   const { from } = location.state || { from: { pathname: "/" } }

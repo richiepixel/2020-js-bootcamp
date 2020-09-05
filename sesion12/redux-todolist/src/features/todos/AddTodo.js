@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from './todosSlice'
 
-const mapDispatch = { addTodo }
+const mapDispatchToProps = { addTodo }
 
 const AddTodo = ({ addTodo }) => {
   const [todoText, setTodoText] = useState('')
@@ -14,13 +14,12 @@ const AddTodo = ({ addTodo }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          if(!todoText.trim()){
+          if (!todoText.trim()) {
             return
           }
           addTodo(todoText)
           setTodoText('')
-        }
-        }
+        }}
       >
         <input value={todoText} onChange={onChange} />
         <button type="submit">Add Todo Task</button>
@@ -31,6 +30,6 @@ const AddTodo = ({ addTodo }) => {
 
 export default connect(
   null, //mapState lo envío como null.
-  mapDispatch
-)(AddTodo) //(AddTodo) se refiere a dónde lo conecto con redux.
+  mapDispatchToProps
+)(AddTodo) //(AddTodo) se refiere a dónde lo conecto con redux (store).
 //export default AddTodo

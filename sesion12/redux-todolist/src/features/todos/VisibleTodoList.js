@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 import { createSelector } from '@reduxjs/toolkit'
 import { toggleTodo } from '../todos/todosSlice'
-import TodoList from './TodoList'
 import { VisibilityFilters } from '../filters/filtersSlice'
+import TodoList from './TodoList'
 
 const selectTodos = state => state.todos
 const selectFilter = state => state.visibilityFilter
 
 const selectVisibleTodos = createSelector(
   [selectTodos, selectFilter],
-  (todos, filter = VisibilityFilters.SHOW_ACTIVE) => {
+  (todos, filter = VisibilityFilters.SHOW_ACTIVE ) => {
     switch (filter) {
       case VisibilityFilters.SHOW_ALL:
         return todos
@@ -21,6 +21,7 @@ const selectVisibleTodos = createSelector(
         throw new Error('Unknown filter: ' + filter)
     }
   }
+
 )
 
 const mapStateToProps = state => ({
@@ -28,6 +29,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = { toggleTodo }
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps //Este es el que actualiza.

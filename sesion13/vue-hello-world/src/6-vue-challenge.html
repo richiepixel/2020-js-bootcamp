@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <title>Vue Challenge</title>
+</head>
+
+<body>
+  <a onclick="window.history.back()">Go back</a>
+  <section id="root">
+    <h1>{{title}}</h1>
+    <ul>
+      <li v-if='displayList' v-for='(vueTech) in vueEcosystem'>
+        <vue-tech :id='vueTech.id' :tech='vueTech.tech' />
+      </li>
+    </ul>
+    <button v-on:click='reverseTitle'>Reverse title</button>
+    <button @click='showList'>{{buttonLabel}}</button>
+
+  </section>
+
+
+  <script>
+    Vue.component('vue-tech', {
+      props: ['id','tech'],
+      template: `
+        <div>{{id}} - {{tech}} is a Vue tech ✌🏻</div>
+      `
+    })
+
+    let app = new Vue({
+      el: '#root',
+      data: {
+        title: 'Vue challenge',
+        buttonLabel: 'Show list',
+        displayList: false,
+        vueEcosystem: [
+          { id: 1, tech: 'vue cli' },
+          { id: 2, tech: 'vue devtools' },
+          { id: 3, tech: 'vue router' },
+          { id: 4, tech: 'vuex (state manager)' },
+          { id: 5, tech: 'nuxt (server side render)' },
+        ]
+      },
+      methods: {
+        reverseTitle() {
+          this.title = this.title.split("").reverse().join("")
+        },
+        showList() {
+          this.displayList = !this.displayList
+          this.buttonLabel = (this.displayList) ? 'Hide list' : 'Show list'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

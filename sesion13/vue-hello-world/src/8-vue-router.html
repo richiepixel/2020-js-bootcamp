@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <title>Vue Component</title>
+</head>
+
+<body>
+  <a onclick="window.history.back()">Go back</a>
+  <h3>Vue Router</h3>
+  <section id="root">
+    <router-view></router-view>
+    <a href="/8-vue-router.html#/">root</a>
+    <a href="/8-vue-router.html#/dashboard">dashboard</a>
+    <a href="/8-vue-router.html#/user">user</a>
+ <!--    <router-link to="/">/</router-link>
+    <router-link to="/dashboard">Dashboard</router-link>
+    <router-link to="/user">User</router-link> -->
+  
+
+  </section>
+
+  <script>
+    const RootComponent = Vue.component('root-component', {
+      template: `
+        <div>🌱 Root Component</div>
+      `
+    })
+
+    const DashboardComponent = {template: `<div>📈 Dashboard Component</div>`} //A diferencia de la anterior toma el primer parámetro del nombre de la variable
+
+    const UserComponent = {template: `<div>👨🏻‍💻 User Component</div>`}
+    const routes = [
+      { path: '/', component: RootComponent },
+      { path: '/dashboard', component: DashboardComponent },
+      { path: '/user', component: UserComponent }
+    ]
+    const router = new VueRouter({
+      routes
+    })
+    new Vue({
+      router
+    }).$mount('#root')
+  </script>
+</body>
+
+</html>

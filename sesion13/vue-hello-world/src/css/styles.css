@@ -1,6 +1,6 @@
 * {
   --body-background-color: dodgerblue;
-  --nav-background-color: #6A12E8;
+  --nav-background-color: #6A12E8 ;
 }
 body {
   background-color: var(--body-background-color);
@@ -17,7 +17,7 @@ body a {
 }
 
 nav {
-  max-width: 60rem;
+  max-width: 20rem;
   background-color: var(--nav-background-color);
   font-size: large;
   margin-left: 3rem;
@@ -27,7 +27,7 @@ nav ul {
   /* flex-flow: column wrap; */
   flex-direction: column;
   align-content: space-around;
-  max-height: 30rem;
+  max-height: 33rem;
   list-style-type: none;
   margin: 0;
   padding: 0;

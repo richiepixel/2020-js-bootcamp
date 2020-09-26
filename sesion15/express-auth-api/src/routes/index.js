@@ -14,7 +14,18 @@ router.post('/register', (req, res) => {
     req.body.name,
     req.body.email,
     bcrypt.hashSync(req.body.password, 10),
-  ])
+  ],
+  (err) => {
+    if (err) return res.status(500).send(JSON.stringify({
+      succes: false, 
+      msg: `there was a problem registering the user ${req.body.email}`, 
+      err
+    }))
+    res.status(200).send({
+      succes: true, 
+      user: [req.body.name, req.body.email]
+    })
+  })
 
 /* router.post('/register', (req, res) => {
   res.send(JSON.stringify({

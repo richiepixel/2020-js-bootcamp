@@ -8,8 +8,8 @@ POST http://127.0.0.1:3000/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Richie",
-  "email": "rcedilloall@gmail.com",
+  "name": "Joyce",
+  "email": "joyce@gmail.com",
   "password": "ytrewq"
 }
 

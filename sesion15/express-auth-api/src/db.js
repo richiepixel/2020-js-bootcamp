@@ -26,5 +26,12 @@ class DB {
       (err) => { callback(err) }
     )
   }
+
+  findByEmail(email, callback){
+    return this.db.get('SELECT * from user WHERE email = ?',
+    email,
+    (err,row) => { callback(err, row)}
+    )
+  }
 }
 module.exports = DB

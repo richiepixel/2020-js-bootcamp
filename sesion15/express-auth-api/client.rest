@@ -30,8 +30,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:3000/login HTTP/1.1
+POST http://127.0.0.1:3000/verify-jwt HTTP/1.1
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlciI6ImpveWNlQGdtYWlsLmNvbSIsImlhdCI6MTYwMTE1MzM5MiwiZXhwIjoxNjAxMTU2OTkyfQ.b7dUEspRl88ixhNxL5dH3UtvsB0KA04hx8_XMQ-CrKo
 
 {
   "email": "joyce@gmail.com",

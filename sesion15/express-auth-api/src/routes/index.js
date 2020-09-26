@@ -56,6 +56,7 @@ router.post('/register', (req, res) => {
       })
     })
 
+  
   /* router.post('/register', (req, res) => {
     res.send(JSON.stringify({
       msg: '[POST] /register',
@@ -66,6 +67,19 @@ router.post('/register', (req, res) => {
         bcrypt.hashSync(req.body.password, 10)
       ]
     }))  */
+})
+router.post('/verify-jwt', (req, res) => {
+  jwt.verify(req.headers['authorization'], process.env.JWT_SECRET, (err, decoded) => {
+    if (err)
+      return res.status(500).send({
+        valid: false,
+        err
+      })
+    res.send({
+      valid: true,
+      msg: decoded,
+    })
+  });
 })
 
 module.exports = router 

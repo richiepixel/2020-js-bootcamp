@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt')
-const logger = require('../logger')
-const saltRounds = 10
+const bcrypt = require('bcrypt');
+const logger = require('../logger');
+const saltRounds = 9
 const myPlaintextPassword = 's0/\/\P4$$w0rD'
 const someOtherPlaintextPassword = 'not_bacon'
 const hashPassword = '$2b$09$9/j7p8v2oyQV8.fR6c4hjuo1WBESu8qi4Uz8penGA.Seq21Atkz8a'
@@ -8,6 +8,9 @@ const hashPassword = '$2b$09$9/j7p8v2oyQV8.fR6c4hjuo1WBESu8qi4Uz8penGA.Seq21Atkz
 bcrypt.hash(myPlaintextPassword, saltRounds)
   .then((hash) => {
     console.log(hash) // Aquí se almacena en BD
+  })
+  .catch((err) => {
+    logger.error(err)
   })
 // compare using promises
 bcrypt.compare(myPlaintextPassword, hashPassword)

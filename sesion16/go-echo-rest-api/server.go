@@ -19,7 +19,9 @@ func main() {
 
 	// Routes
 	e.GET("/", hello)
+	e.POST("/login", handlers.Login)
 
+	// Route group
 	r := e.Group("/users")
 	r.Use(middleware.JWT([]byte(os.Getenv("JWT_SECRET"))))
 	r.POST("/", handlers.SaveUser)
@@ -27,6 +29,9 @@ func main() {
 	r.GET("/:id", handlers.GetUser)
 	r.PUT("/:id", handlers.UpdateUser)
 	r.DELETE("/:id", handlers.DeleteUser)
+
+	// Ejercicio: Leer path parameter "id" para GET y DELETE
+	// en GET debe responder cuando lleve o no usuario
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))

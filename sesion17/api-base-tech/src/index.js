@@ -16,18 +16,19 @@ const tryStore = async () => {
        email: 'rcedilloal@gmail.com',
        password: 'querty'
      }) */
-/*     //update
-    await store.User.update({ password: await bcrypt.hash('qwerty', 9) }, {
+ /*    //update
+    await store.User.update({ password: await bcrypt.hash('qwerty1', 9) }, {
       where: {
         email: 'rcedilloal@gmail.com'
       }
     }) */
-    const richie = await store.User.findAll({
+    const richie = await store.User.findOne({
       where: {
         id: '1'
       }
     })
     console.log(`Resultado: ${richie.password}`)
+    console.log(`password match: ${await bcrypt.compare('qwerty1', richie.password)}`)
     //nueva consulta
     //console.log(await store.User.findAll());
 

@@ -28,7 +28,7 @@ const tryStore = async () => {
       }
     })
     console.log(`Resultado: ${richie.password}`)
-    console.log(`password match: ${await bcrypt.compare('qwerty1', richie.password)}`)
+    console.log(`password match: ${await bcrypt.compare('qwerty', richie.password)}`)
     //nueva consulta
     //console.log(await store.User.findAll());
 

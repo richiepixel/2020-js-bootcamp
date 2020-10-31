@@ -1,3 +1,4 @@
+import { Any } from "typeorm";
 import { connection } from "../db";
 import { Book } from "../entity/Book";
 
@@ -8,7 +9,7 @@ export class BookController {
     this.books = books;
   }
 
-  async getBooks(){
+  async getBooks() {
     return await connection.manager.find(Book)
   }
   async getBook(id: number) {
@@ -16,10 +17,20 @@ export class BookController {
       where: { id: id },
     });
   }
-  async saveBook(book: IBook) { 
+  async saveBook(book: IBook) {
     return await connection.manager.save(Book, book)
   }
-  updateBook(id: number) { }
+  async updateBook(id: number) {
+    return await connection.manager
+      .createQueryBuilder()
+      .update(Book).set({
+        title: 'Ready Player Three',
+        author: 'EC'
+      })
+      .where("id = :id", {id})
+      .execute
+  }
+
   deleteBook(id: number) { }
 }
 

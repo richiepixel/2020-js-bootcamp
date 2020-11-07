@@ -9,4 +9,11 @@ export const User = gql`
    password: String
    isAdmin: Boolean
  }
+ input UserInput {
+    name: String
+    lastName: String
+    email: String
+    password: String
+    isAdmin: Boolean
+  }
 `;

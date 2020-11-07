@@ -1,4 +1,4 @@
-import {UserController} from "../controller/UserController"
+import {UserController} from "../controller/UserAPI"
 import { AuthAPI } from "../controller/AuthAPI";
 
 const userController: UserController = new UserController();

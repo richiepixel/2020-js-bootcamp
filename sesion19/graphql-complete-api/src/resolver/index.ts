@@ -1,20 +1,22 @@
-import {UserController} from "../controller/UserAPI"
 import { AuthAPI } from "../controller/AuthAPI";
+import { UserAPI } from "../controller/UserAPI";
 
-const userController: UserController = new UserController();
+const userAPI: UserAPI = new UserAPI();
 const authAPI: AuthAPI = new AuthAPI();
 
 export const resolvers = {
   Query: {
     login: (_, { email, password }) => authAPI.getToken({ email, password }),
-    users: () => userController.getUsers(),
-    user: (_, { id }) => userController.getUser(id)
+    users: (_, __, { token }) => authAPI.verifyToken(token)
+      && userAPI.getUsers(),
+    user: (_, { id }, { token }) => authAPI.verifyToken(token)
+      && userAPI.getUser(id),
   },
   Mutation: {
-    saveUser: (_, { name, lastName, email, password, isAdmin }) =>
-      userController.saveUser({ name, lastName, email, password, isAdmin }),
-    deleteUser: (_, {id}) => userController.deleteUser(id),
-    updateUser: (_, { id, name, lastName, email, password, isAdmin }) =>
-      userController.updateUser({ id, name, lastName, email, password, isAdmin })
-  }
+    saveUser: (_, { input }) => userAPI.saveUser({ ...input }),
+    updateUser: (_, { id, input }, { token }) => authAPI.verifyToken(token)
+      && userAPI.updateUser({ id, ...input }),
+    deleteUser: (_, { id }, { token }) => authAPI.verifyToken(token)
+      && userAPI.deleteUser(id),
+  },
 };

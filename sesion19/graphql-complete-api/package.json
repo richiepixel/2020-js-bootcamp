@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc --project tsconfig.production.json",
+    "build": "tsc --project tsconfig.production.json",
     "start": "npx nodemon src/index.ts"
   },
   "keywords": [],

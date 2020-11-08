@@ -1,18 +1,14 @@
-import { Connection, createConnection } from "typeorm";
-import { User } from "../entity/User"
+import { createConnection } from "typeorm";
 
-let connection: Connection;
-
-(async () => {
-  connection = await createConnection({
+export const getConnection = async () => {
+  const connection = await createConnection({
     type: "sqlite",
-    database: "databaseUser.sqlite",
-    synchronize: true, //automaticamente crea la tabla.
+    database: "database.sqlite",
+    synchronize: true,
     logging: true,
     entities: [
-      User,
+      `${__dirname}/../entity/*`,
     ],
   });
-})();
-
-export { connection };
+  return connection
+}

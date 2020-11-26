@@ -1,13 +1,13 @@
 import { Redirect, Route } from "react-router-dom"
-import { useAuth } from "../hook/ProvideAuth";
+import { useAuth } from "../hook/authHook";
 
 export const PrivateRoute = ({ children, ...rest }) => {
-  let auth = useAuth();
+  const auth = useAuth();
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user
+        auth.user || auth.isSigned()
           ? (children)
           : (<Redirect
             to={{
